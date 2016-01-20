@@ -15,4 +15,22 @@ This PostCSS plugin will take all CSS passed into it and convert all classes int
   var placeholdernater = require("postcss-placeholdernater");
   
   var file = "/path/to/pure.css";
+  
+  // css to be processed
+  var css = fs.readFileSync("src/" + file, "utf8");
+  
+  // process css
+  postcss()
+    .use(atImport())
+    .use(nested())
+    .use(reference())
+    .use(extend())
+    .use(placeholdernater()) // .use(placeholdernater({type: 'styl'})) for stylus syntax output
+    .process(css, {
+        from: "src/" + file,
+        to: file
+    }).then(function (result) {
+        fs.writeFileSync(file, result.css);
+        if ( result.map ) fs.writeFileSync(file + '.map', result.map);
+    });
   ```
