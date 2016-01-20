@@ -9,7 +9,8 @@
   "keywords": [
     "Sass",
     "Stylus",
-    "PostCSS"
+    "PostCSS",
+    "postcss-plugin"
   ],
   "author": "Samuel Allen <dehuszar@gmail.com>",
   "license": "ISC",
