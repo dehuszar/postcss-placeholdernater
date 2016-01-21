@@ -2,6 +2,11 @@
   "name": "postcss-placeholdernater",
   "version": "0.0.1",
   "description": "PostCSS plugin to convert all selectors from a source file to a Sass or Stylus placeholder selector",
+  "scripts": {
+    "prepublish": "babel test/test.js --out-dir dist --ignore /test/",
+    "test-unformatted": "babel-tape-runner \"dist/test/*.js\"",
+    "test": "npm run test-unformatted | tap-spec"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +17,10 @@
     "PostCSS",
     "postcss-plugin"
   ],
-  "author": "Samuel Allen <dehuszar@gmail.com>",
+  "author": {
+    "name": "Samuel Allen",
+    "email": "dehuszar@gmail.com"
+  },
   "license": "MIT",
   "repository": "dehuszar/postcss-placeholdernater",
   "bugs": {
