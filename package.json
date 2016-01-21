@@ -2,6 +2,10 @@
   "name": "postcss-placeholdernater",
   "version": "0.0.1",
   "description": "PostCSS plugin to convert all selectors from a source file to a Sass or Stylus placeholder selector",
+  "scripts": {
+    "prepublish": "babel test/test.js --out-dir dist --ignore /test/",
+    "test-unformatted": "babel-tape-runner \"dist/test/*.js\"",
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
