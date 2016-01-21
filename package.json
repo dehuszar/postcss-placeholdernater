@@ -5,6 +5,7 @@
   "scripts": {
     "prepublish": "babel test/test.js --out-dir dist --ignore /test/",
     "test-unformatted": "babel-tape-runner \"dist/test/*.js\"",
+    "test": "npm run test-unformatted | tap-spec"
   },
   "main": "index.js",
   "scripts": {
